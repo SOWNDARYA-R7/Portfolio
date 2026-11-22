@@ -1,0 +1,198 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cyan: var(--cyan);
+  --color-violet: var(--violet);
+  --color-glass: var(--glass);
+}
+
+/* Light theme */
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.98 0.006 250);
+  --foreground: oklch(0.2 0.03 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.03 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.03 265);
+  --primary: oklch(0.56 0.2 258);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.012 255);
+  --secondary-foreground: oklch(0.25 0.03 265);
+  --muted: oklch(0.94 0.012 255);
+  --muted-foreground: oklch(0.48 0.03 260);
+  --accent: oklch(0.93 0.03 230);
+  --accent-foreground: oklch(0.25 0.05 260);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.89 0.015 255);
+  --input: oklch(0.89 0.015 255);
+  --ring: oklch(0.56 0.2 258);
+  --cyan: oklch(0.62 0.13 215);
+  --violet: oklch(0.55 0.2 292);
+  --glass: oklch(1 0 0 / 0.7);
+  --glass-border: oklch(0.2 0.03 265 / 0.08);
+  --grid-dot: oklch(0.2 0.03 265 / 0.07);
+  --glow: oklch(0.56 0.2 258 / 0.25);
+}
+
+/* Dark theme (default) */
+.dark {
+  --background: oklch(0.14 0.025 268);
+  --foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.19 0.03 268);
+  --card-foreground: oklch(0.96 0.01 250);
+  --popover: oklch(0.19 0.03 268);
+  --popover-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.68 0.18 255);
+  --primary-foreground: oklch(0.14 0.025 268);
+  --secondary: oklch(0.24 0.03 268);
+  --secondary-foreground: oklch(0.96 0.01 250);
+  --muted: oklch(0.24 0.03 268);
+  --muted-foreground: oklch(0.72 0.03 255);
+  --accent: oklch(0.26 0.05 262);
+  --accent-foreground: oklch(0.96 0.01 250);
+  --border: oklch(1 0 0 / 0.09);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: oklch(0.68 0.18 255);
+  --cyan: oklch(0.8 0.13 210);
+  --violet: oklch(0.68 0.19 292);
+  --glass: oklch(0.2 0.03 268 / 0.55);
+  --glass-border: oklch(1 0 0 / 0.09);
+  --grid-dot: oklch(1 0 0 / 0.06);
+  --glow: oklch(0.68 0.18 255 / 0.35);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  section[id] { scroll-margin-top: 5.5rem; }
+}
+
+@utility glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+@utility text-gradient {
+  background: linear-gradient(110deg, var(--primary), var(--cyan), var(--violet), var(--primary));
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 8s linear infinite;
+}
+
+@utility bg-gradient-brand {
+  background: linear-gradient(120deg, var(--primary), var(--cyan) 50%, var(--violet));
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@utility glow-hover {
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s, border-color 0.35s;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -20px var(--glow);
+    border-color: color-mix(in oklab, var(--primary) 45%, transparent);
+  }
+}
+
+@utility animated-border {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from var(--angle), transparent 60%, var(--cyan), var(--violet), transparent 90%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s;
+    animation: spin-angle 4s linear infinite;
+    pointer-events: none;
+  }
+  &:hover::before { opacity: 1; }
+}
+
+@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+
+@keyframes spin-angle { to { --angle: 360deg; } }
+@keyframes gradient-shift { to { background-position: 250% center; } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes blob { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(40px,-30px) scale(1.1); } 66% { transform: translate(-30px,20px) scale(0.95); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes orbit-spin { from { transform: rotateX(-12deg) rotateY(0deg); } to { transform: rotateX(-12deg) rotateY(360deg); } }
+@keyframes counter-spin { from { transform: rotateY(0deg); } to { transform: rotateY(-360deg); } }
+@keyframes logo-turn { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+
+@utility animate-float { animation: float 6s ease-in-out infinite; }
+@utility animate-spin-slow { animation: spin-slow 14s linear infinite; }
+@utility animate-blob { animation: blob 18s ease-in-out infinite; }
+@utility animate-blink { animation: blink 1s step-end infinite; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(.2,.8,.2,1), transform 0.8s cubic-bezier(.2,.8,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* 3D skill orbit */
+.orbit-stage { perspective: 1100px; }
+.orbit-ring { transform-style: preserve-3d; animation: orbit-spin 36s linear infinite; }
+.orbit-stage:hover .orbit-ring { animation-play-state: paused; }
+.orbit-item { position: absolute; left: 50%; top: 50%; transform-style: preserve-3d; }
+.orbit-face { animation: counter-spin 36s linear infinite; transform-style: preserve-3d; }
+.orbit-stage:hover .orbit-face { animation-play-state: paused; }
+.logo-turn { animation: logo-turn 9s linear infinite; }
+.group:hover .logo-turn { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
