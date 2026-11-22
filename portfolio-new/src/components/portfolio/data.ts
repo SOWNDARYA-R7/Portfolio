@@ -47,27 +47,75 @@ export const achievements = [
   { title: "Treasure Hunt Coding — 2nd Prize", org: "SREC" },
   { title: "Diamond & Golden Badges", org: "100+ day streaks · 50+ weekly contests" },
   { title: "Shortlisted — Infosys Springboard Virtual Internship", org: "Infosys" },
-  { title: "Recognised for communication & leadership", org: "5+ senior professionals · Team Everest" },
+  {
+    title: "Recognised for communication & leadership",
+    org: "5+ senior professionals · Team Everest",
+  },
   { title: "IEEE Student Member", org: "IEEE Madras Section" },
 ];
 
 export const certifications = [
-  { title: "Problem Solving Through Programming in C", org: "NPTEL", year: "2025", url: "https://drive.google.com/file/d/19l6FJe0czzUJaajYTVC2fjes2-hF593h/view?usp=sharing" },
-  { title: "Full Stack Development", org: "Novi-Tech", year: "2025", url: "https://drive.google.com/file/d/1XOVUGpS6u4XwJFYAChkONZIdzzz1Y6KZ/view?usp=sharing" },
-  { title: "Java Foundation", org: "Infosys", year: "2026", url: "https://drive.google.com/file/d/1F_MUG7gq6qqTFB6drC13Oak91cWM832U/view?usp=sharing" },
-  { title: "Python Essentials 1", org: "Cisco", year: "2026", url: "https://drive.google.com/file/d/1jEoNZsYoshKHayPZoCtQtRWBw_BB4bMX/view?usp=sharing" },
-  { title: "Decision Making", org: "Team Everest", year: "2026", url: "https://drive.google.com/file/d/1f9_uuGmOLJfaksQaWbzYMP4k1vzy7JSR/view?usp=sharing" },
+  {
+    title: "Problem Solving Through Programming in C",
+    org: "NPTEL",
+    year: "2025",
+    url: "https://drive.google.com/file/d/19l6FJe0czzUJaajYTVC2fjes2-hF593h/view?usp=sharing",
+  },
+  {
+    title: "Full Stack Development",
+    org: "Novi-Tech",
+    year: "2025",
+    url: "https://drive.google.com/file/d/1XOVUGpS6u4XwJFYAChkONZIdzzz1Y6KZ/view?usp=sharing",
+  },
+  {
+    title: "Java Foundation",
+    org: "Infosys",
+    year: "2026",
+    url: "https://drive.google.com/file/d/1F_MUG7gq6qqTFB6drC13Oak91cWM832U/view?usp=sharing",
+  },
+  {
+    title: "Python Essentials 1",
+    org: "Cisco",
+    year: "2026",
+    url: "https://drive.google.com/file/d/1jEoNZsYoshKHayPZoCtQtRWBw_BB4bMX/view?usp=sharing",
+  },
+  {
+    title: "Decision Making",
+    org: "Team Everest",
+    year: "2026",
+    url: "https://drive.google.com/file/d/1f9_uuGmOLJfaksQaWbzYMP4k1vzy7JSR/view?usp=sharing",
+  },
 ];
 
 export const competitive = [
-  { platform: "LeetCode", url: "https://leetcode.com/u/Kitcs165/", lines: ["Max rating 1455", "300+ problems solved", "Top 86.07% globally"] },
-  { platform: "CodeChef", url: "https://www.codechef.com/users/kit28csa165", lines: ["Max DSA rating 1464 · 2 Star", "800+ problems solved", "59 contests attended"] },
+  {
+    platform: "LeetCode",
+    url: "https://leetcode.com/u/Kitcs165/",
+    lines: ["Max rating 1455", "300+ problems solved", "Top 86.07% globally"],
+  },
+  {
+    platform: "CodeChef",
+    url: "https://www.codechef.com/users/kit28csa165",
+    lines: ["Max DSA rating 1464 · 2 Star", "800+ problems solved", "59 contests attended"],
+  },
 ];
 
 export const volunteering = [
-  { org: "Team Everest", role: "Peer Aptitude Tutor", desc: "Taught aptitude to peers in the First Penguin Class at Team Everest coaching." },
-  { org: "KIT Coimbatore", role: "Programming Mentor", desc: "Taught programming fundamentals and coding platforms to junior students through hands-on exercises." },
-  { org: "College Social Club", role: "Volunteer", desc: "Took part in campus cleanliness and community service initiatives." },
+  {
+    org: "Team Everest",
+    role: "Peer Aptitude Tutor",
+    desc: "Taught aptitude to peers in the First Penguin Class at Team Everest coaching.",
+  },
+  {
+    org: "KIT Coimbatore",
+    role: "Programming Mentor",
+    desc: "Taught programming fundamentals and coding platforms to junior students through hands-on exercises.",
+  },
+  {
+    org: "College Social Club",
+    role: "Volunteer",
+    desc: "Took part in campus cleanliness and community service initiatives.",
+  },
 ];
 
 export type Tech = { name: string; icon: string; invert?: boolean };
@@ -101,17 +149,82 @@ export const tech = {
 export type TechKey = keyof typeof tech;
 
 export const orbitKeys: TechKey[] = [
-  "html", "css", "js", "react", "node", "express", "python", "c", "java",
-  "mongodb", "mysql", "git", "github", "vscode", "powerbi", "figma", "bootstrap", "tailwind",
+  "html",
+  "css",
+  "js",
+  "react",
+  "node",
+  "express",
+  "python",
+  "c",
+  "java",
+  "mongodb",
+  "mysql",
+  "git",
+  "github",
+  "vscode",
+  "powerbi",
+  "figma",
+  "bootstrap",
+  "tailwind",
 ];
 
 export const skillGroups = [
-  { title: "Frontend Development", items: [["html", 90], ["css", 85], ["js", 85], ["react", 82], ["tailwind", 80], ["bootstrap", 75]] },
-  { title: "Backend Development", items: [["node", 85], ["express", 85], ["spring", 65], ["fastapi", 70], ["jwt", 75]] },
-  { title: "Programming Languages", items: [["cpp", 85], ["c", 80], ["python", 82], ["java", 75]] },
-  { title: "Databases", items: [["mongodb", 82], ["mysql", 78]] },
-  { title: "Tools & Technologies", items: [["git", 85], ["github", 85], ["vscode", 90], ["postman", 80], ["figma", 65]] },
-  { title: "Data Analytics", items: [["powerbi", 82], ["python", 80], ["sklearn", 70]] },
+  {
+    title: "Frontend Development",
+    items: [
+      ["html", 90],
+      ["css", 85],
+      ["js", 85],
+      ["react", 82],
+      ["tailwind", 80],
+      ["bootstrap", 75],
+    ],
+  },
+  {
+    title: "Backend Development",
+    items: [
+      ["node", 85],
+      ["express", 85],
+      ["spring", 65],
+      ["fastapi", 70],
+      ["jwt", 75],
+    ],
+  },
+  {
+    title: "Programming Languages",
+    items: [
+      ["cpp", 85],
+      ["c", 80],
+      ["python", 82],
+      ["java", 75],
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      ["mongodb", 82],
+      ["mysql", 78],
+    ],
+  },
+  {
+    title: "Tools & Technologies",
+    items: [
+      ["git", 85],
+      ["github", 85],
+      ["vscode", 90],
+      ["postman", 80],
+      ["figma", 65],
+    ],
+  },
+  {
+    title: "Data Analytics",
+    items: [
+      ["powerbi", 82],
+      ["python", 80],
+      ["sklearn", 70],
+    ],
+  },
 ] as const satisfies readonly { title: string; items: readonly (readonly [TechKey, number])[] }[];
 
 export const experiences = [
@@ -148,7 +261,7 @@ export const experiences = [
 ];
 
 export const projects = [
-    {
+  {
     title: "Manufacturing Quality Analysis & Defect Prediction Platform",
     category: "AI / ML",
     desc: "End-to-end predictive maintenance and quality analytics platform analyzing 10,000 production records to forecast machine failures with SHAP root-cause explanations and BI insights.",
@@ -160,20 +273,6 @@ export const projects = [
     stack: ["python", "fastapi", "node", "express", "mongodb"] as TechKey[],
     tags: ["XGBoost", "SHAP", "Power BI", "In Progress"],
     metric: "10K+ Records Analyzed",
-    github: "",
-  },
-  {
-    title: "AI-Powered Government Scheme Gap Detector",
-    category: "AI / ML",
-    desc: "Proactive welfare-inclusion platform that finds eligible citizens overlooked by government schemes, with explainable ML reasons for every flag.",
-    points: [
-      "Python FastAPI microservice combining ML eligibility prediction with SHAP explainability.",
-      "Node.js + Express REST backend on MongoDB for citizens, schemes, recommendations and verification status.",
-      "React Officer Dashboard for human-in-the-loop approval.",
-    ],
-    stack: ["react", "node", "express", "python", "fastapi", "mongodb"] as TechKey[],
-    tags: ["SHAP", "Explainable AI"],
-    metric: "Explainable AI",
     github: "",
   },
   {

@@ -28,7 +28,8 @@ export function useActiveSection(ids: string[]) {
         const el = document.getElementById(id);
         if (el && el.offsetTop <= y) current = id;
       }
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = ids[ids.length - 1];
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4)
+        current = ids[ids.length - 1];
       setActive(current);
     };
     onScroll();
@@ -101,7 +102,9 @@ export function useTheme() {
     document.documentElement.classList.toggle("dark", next);
     try {
       localStorage.setItem("theme", next ? "dark" : "light");
-    } catch {}
+    } catch {
+      /* ignore storage write failures */
+    }
   };
   return { dark, toggle };
 }

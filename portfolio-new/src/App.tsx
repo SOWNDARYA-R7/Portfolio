@@ -31,9 +31,7 @@ export default function App() {
     <div className="relative min-h-screen bg-background text-foreground antialiased selection:bg-cyan/20 selection:text-cyan">
       {/* Ambient background glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <div
-          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-primary/15 blur-[140px] animate-blob"
-        />
+        <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-primary/15 blur-[140px] animate-blob" />
         <div
           className="absolute top-1/3 -right-40 h-[650px] w-[650px] rounded-full bg-cyan/10 blur-[160px] animate-blob"
           style={{ animationDelay: "4s" }}
